@@ -2,6 +2,7 @@
 from collections import deque
 from sys import argv
 
+
 # This is the program structure.
 # |-- The code below is being separated through a file.
 # `--           K    K-3 = H     Y           Y-13 = L   L-7 = E
@@ -44,9 +45,13 @@ while (ip < len(program)):
         stack.clear()
         restore_stack.clear()
         alpha = "a"
+    elif (code == "#settings(show_stack)"):
+        print(f"The restore stack: {restore_stack}") 
+        print(f"The stack: {stack}")
     else:
         print(f"Position {ip}: Expecting `+`, `-`, `,` and `.`, but got `{code}`.")
         exit(1)
     # print(f"The restore stack: {restore_stack}") 
     # print(f"The stack: {stack}")
     ip += 1
+
