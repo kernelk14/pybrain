@@ -45,9 +45,11 @@ while (ip < len(program)):
         stack.clear()
         restore_stack.clear()
         alpha = "a"
-    elif (code == "#settings(show_stack)"):
+    elif (code == "%"):
         print(f"The restore stack: {restore_stack}") 
         print(f"The stack: {stack}")
+    elif (code == "$"):
+        print(f"The source file being executed:\n\t{code}")
     else:
         print(f"Position {ip}: Expecting `+`, `-`, `,` and `.`, but got `{code}`.")
         exit(1)
